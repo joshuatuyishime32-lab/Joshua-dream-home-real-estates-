@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Property Sales Growth</title>
+<!-- Include Chart.js CDN for easy graph creation -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color:#f4f4f4;
+    margin:0;
+    padding:20px;
+  }
+  h2 {
+    text-align:center;
+    margin-bottom:20px;
+  }
+  .chart-container {
+    width:80%;
+    max-width:700px;
+    margin:0 auto 40px auto;
+    background:#fff;
+    padding:20px;
+    border-radius:8px;
+    box-shadow:0 2px 8px rgba(0,0,0,0.1);
+  }
+  /* Styles for About Us section */
+  #about-us {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: 0 auto 40px auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+  }
+  #about-us h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  #about-us p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+  }
+</style>
+</head>
+<body>
+
+<!-- About Us Section -->
+<section id="about-us">
+  <h2>About Us</h2>
+  <p>
+    Welcome to <strong>[joshua real estate]</strong>, your trusted partner in turning dreams into reality.
+    With years of experience in the real estate industry, we are dedicated to helping you find the perfect home or investment property.
+    Our team is passionate about providing personalized service, expert guidance, and unmatched market insights to ensure you make informed decisions.
+  </p>
+  <p>
+    At <strong>[joshua real estate]</strong>, integrity, professionalism, and customer satisfaction are at the heart of everything we do.
+    Whether you're buying, selling, or renting, we're here to make the process smooth, transparent, and successful.
+  </p>
+  <p>
+    Join our family of satisfied clients and discover how we can help you find your next home or investment opportunity. Your journey begins here!
+  </p>
+</section>
+
+<h2>Property Sales Growth - Last 6 Months</h2>
+<div class="chart-container">
+  <canvas id="salesChart"></canvas>
+</div>
+
+<script>
+  const ctx = document.getElementById('salesChart').getContext('2d');
+  const salesChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['April', 'May', 'June', 'July', 'August', 'September'],
+      datasets: [{
+        label: 'Number of Properties Sold',
+        data: [12, 19, 14, 20, 25, 30],
+        backgroundColor: 'rgba(54, 162, 235, 0.7)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      }]
+    },
+    options: {
+      responsive:true,
+      scales: {
+        y: {
+          beginAtZero:true,
+          ticks: {
+            precision:0
+          }
+        }
+      }
+    }
+  });
+</script>
+
+</body>
+</html>
